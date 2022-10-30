@@ -10,7 +10,7 @@
 import AppNavigation from './AppNavigation/index.vue'
 import AppMain from './AppMain/index.vue'
 import AppFooter from './AppFooter/index.vue'
-const props = defineProps<{
+defineProps<{
   classes: string
 }>()
 </script>
