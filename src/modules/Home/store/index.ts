@@ -1,4 +1,4 @@
-import { BaseQueryModel } from '@/base-models'
+import type { BaseQueryModel } from '@/base-models'
 import { defineStore } from 'pinia'
 import { getUsers } from '../api'
 
