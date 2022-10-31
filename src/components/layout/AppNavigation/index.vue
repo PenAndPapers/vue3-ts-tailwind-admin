@@ -1,5 +1,5 @@
 <template>
-  <header v-show="auth">
+  <header v-if="auth">
     <nav>
       <span
         v-for="(route, index) in routes"
