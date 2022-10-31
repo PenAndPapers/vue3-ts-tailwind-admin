@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header v-if="auth">
     <nav>
       <span
         v-for="(route, index) in routes"
@@ -25,12 +25,12 @@ import { clearSession, getSession } from '@/utils/session'
 const router = useRouter()
 const routes = ref()
 const isLogOut = ref(false)
+const auth = isAuthenticated()
 
 const handleLogout = async () => {
   await clearSession()
   if (!getSession('_TOKEN_')) router.replace({ path: '/' })
 }
-
 watch(
   router.currentRoute,
   () => {
