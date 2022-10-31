@@ -39,8 +39,8 @@ import { reactive, ref } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
 import { LoginFormRules } from './LoginFormRules'
 
-const rules = reactive<FormRules>(LoginFormRules)
-const formRef = ref<FormInstance>()
+const rules = reactive(LoginFormRules as FormRules)
+const formRef = ref({} as FormInstance)
 const form = reactive({
   email: '',
   password: '',
