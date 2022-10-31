@@ -76,7 +76,11 @@ Project
 │   │      ├──index.scss
 │   │      └──tailwind.scss
 │   │
-│   ├──/base-models
+│   ├──/base
+│   │   ├──/models
+│   │   ├──/rputer
+│   │   └──/store
+│   │
 │   ├──/components
 │   │   ├──/common
 │   │   │   ├──GlobalComponent1.vue

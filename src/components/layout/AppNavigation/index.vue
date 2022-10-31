@@ -25,10 +25,12 @@ import { clearSession, getSession } from '@/utils/session'
 const router = useRouter()
 const routes = ref()
 const isLogOut = ref(false)
+
 const handleLogout = async () => {
   await clearSession()
   if (!getSession('_TOKEN_')) router.replace({ path: '/' })
 }
+
 watch(
   router.currentRoute,
   () => {
@@ -40,7 +42,7 @@ watch(
       .filter(Boolean)
     isLogOut.value = isAuthenticated()
   },
-  { deep: true }
+  { deep: true, immediate: true }
 )
 </script>
 

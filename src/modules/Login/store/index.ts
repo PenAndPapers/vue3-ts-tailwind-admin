@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import router from '@/router'
+import router from '@/base/router'
 import { login } from '../api'
 import type { LoginForm } from '../models'
 import { setSession } from '@/utils/session'
