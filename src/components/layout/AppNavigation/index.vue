@@ -40,7 +40,6 @@ const handleLogout = async () => {
   await router.replace({ path: '/' })
   window.sessionStorage.clear()
 }
-
 watch(
   router.currentRoute,
   () => {
