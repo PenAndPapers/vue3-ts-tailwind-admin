@@ -1,14 +1,12 @@
-import type { BaseQueryModel } from '@/base/models'
 import { defineStore } from 'pinia'
-import { getUsers } from '../api'
 
 interface StoreInterface {
   isFetching: boolean
   isProcessing: boolean
 }
 
-export const useHomeStore = defineStore({
-  id: 'HomeStore',
+export const useOneTimePinStore = defineStore({
+  id: 'OneTimePinStore',
   state: (): StoreInterface => ({
     isFetching: false,
     isProcessing: false,
@@ -23,13 +21,6 @@ export const useHomeStore = defineStore({
     },
     setIsProcessing(payload: boolean) {
       this.isProcessing = payload
-    },
-    async getUsers(payload: BaseQueryModel) {
-      this.isFetching = true
-      const response = await getUsers(payload)
-      this.isFetching = false
-
-      console.log('useHomeStore -> getUsers', response)
     },
   },
 })

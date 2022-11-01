@@ -3,6 +3,7 @@ module.exports = {
   content: ['./public/**/*.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   presets: [],
   darkMode: 'media', // or 'class'
+  important: true,
   theme: {
     screens: {
       sm: '640px',
@@ -944,6 +945,7 @@ module.exports = {
       min: 'min-content',
       max: 'max-content',
       fit: 'fit-content',
+      authForm: '540px',
     }),
     willChange: {
       auto: 'auto',

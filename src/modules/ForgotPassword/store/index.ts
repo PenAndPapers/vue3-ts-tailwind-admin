@@ -1,14 +1,12 @@
 import { defineStore } from 'pinia'
-import router from '@/base/router'
-import { login } from '../api'
-import type { LoginForm } from '../models'
+
 interface StoreInterface {
   isFetching: boolean
   isProcessing: boolean
 }
 
-export const useLoginStore = defineStore({
-  id: 'LoginStore',
+export const useForgotPasswordStore = defineStore({
+  id: 'ForgotPasswordStore',
   state: (): StoreInterface => ({
     isFetching: false,
     isProcessing: false,
@@ -23,15 +21,6 @@ export const useLoginStore = defineStore({
     },
     setIsProcessing(payload: boolean) {
       this.isProcessing = payload
-    },
-    async login(payload: LoginForm) {
-      this.isProcessing = true
-      const response = await login(payload)
-      this.isProcessing = false
-
-      if (response.token) {
-        router.replace({ name: 'OneTimePin' })
-      }
     },
   },
 })

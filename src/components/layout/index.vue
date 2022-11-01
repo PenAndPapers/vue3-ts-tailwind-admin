@@ -1,5 +1,5 @@
 <template>
-  <component class="text-center my-4 block" :class="classes" :is="'layout'">
+  <component class="text-center block" :class="classes" :is="'layout'">
     <AppNavigation />
     <AppMain />
     <AppFooter />
