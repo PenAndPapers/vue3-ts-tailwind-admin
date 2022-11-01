@@ -1,9 +1,11 @@
 <template>
-  <div class="">
-    <h2 class="text-emerald-800">Forgot Password Page</h2>
+  <div class="one-time-pin-page">
+    <ForgotPasswordForm />
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import ForgotPasswordForm from '@/modules/ForgotPassword/views/components/ForgotPasswordForm/index.vue'
+</script>
 
 <style scoped lang="scss"></style>

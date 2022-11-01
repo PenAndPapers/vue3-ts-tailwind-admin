@@ -10,7 +10,8 @@
   >
     <el-form-item label="OTP" prop="otp" class="mb-6">
       <el-input
-        placeholder="Enter otp"
+        autofocus
+        placeholder="OTP code"
         minlength="8"
         maxlength="8"
         v-model="form.otp"

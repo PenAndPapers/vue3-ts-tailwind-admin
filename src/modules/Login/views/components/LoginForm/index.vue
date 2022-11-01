@@ -9,10 +9,19 @@
     :status-icon="false"
   >
     <el-form-item label="Email" prop="email" class="mb-6">
-      <el-input v-model="form.email" />
+      <el-input
+        autofocus
+        placeholder="john.doe@email.com"
+        v-model="form.email"
+      />
     </el-form-item>
     <el-form-item label="Password" prop="password" class="mb-8">
-      <el-input v-model="form.password" type="password" show-password />
+      <el-input
+        type="password"
+        placeholder="Password"
+        v-model="form.password"
+        show-password
+      />
     </el-form-item>
     <el-form-item>
       <el-button
