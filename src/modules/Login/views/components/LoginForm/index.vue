@@ -15,7 +15,11 @@
       <el-input v-model="form.password" type="password" show-password />
     </el-form-item>
     <el-form-item>
-      <el-button type="primary" class="w-full" @click="handleLogin"
+      <el-button
+        type="primary"
+        class="w-full"
+        @click="handleLogin"
+        :loading="isProcessing"
         >Login</el-button
       >
     </el-form-item>
@@ -35,21 +39,25 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, ref } from 'vue'
+import { computed, reactive, ref } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
+import { useLoginStore } from '@/modules/Login/store'
 import { LoginFormRules } from './LoginFormRules'
+
+const loginStore = useLoginStore()
+const isProcessing = computed(() => loginStore._isProcessing)
 
 const rules = reactive(LoginFormRules as FormRules)
 const formRef = ref({} as FormInstance)
 const form = reactive({
-  email: '',
-  password: '',
+  email: 'eve.holt@reqres.in',
+  password: 'cityslicka',
 })
 
 const handleLogin = async () => {
   const isFormValid = await formRef.value.validate((valid) => valid)
   if (isFormValid) {
-    console.log('isFormValid', isFormValid)
+    loginStore.login(form)
     handleReset()
   }
 }
