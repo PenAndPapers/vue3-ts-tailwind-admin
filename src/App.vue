@@ -1,11 +1,17 @@
 <template>
-  <Layout :classes="classes" />
+  <DynamicLayout :classes="classes" v-if="isAuthenticated" />
+  <StaticLayout :classes="classes" v-else />
 </template>
 
 <script setup lang="ts">
-import { ref, watchEffect } from 'vue'
+import { computed, ref, watchEffect } from 'vue'
 import { useRoute } from 'vue-router'
-import Layout from '@/components/layout/index.vue'
+import { useBaseStore } from '@/base/store'
+import DynamicLayout from '@/components/layout/DynamicLayout.vue'
+import StaticLayout from '@/components/layout/StaticLayout.vue'
+
+const baseStore = useBaseStore()
+const isAuthenticated = computed(() => baseStore._isAuthenticated)
 
 const route = useRoute()
 const classes = ref('')

@@ -945,7 +945,6 @@ module.exports = {
       min: 'min-content',
       max: 'max-content',
       fit: 'fit-content',
-      authForm: '540px',
     }),
     willChange: {
       auto: 'auto',

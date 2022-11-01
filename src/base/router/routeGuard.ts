@@ -39,6 +39,7 @@ export default async (
    * check if user is authenticated
    */
   if (isAuthenticated()) {
+    console.log(to)
     /**
      * if dynamic routes are not yet added to current route
      * then we need to add it first to prevent 404 page to show
@@ -53,7 +54,7 @@ export default async (
        * or if user is from the ff. pages
        * added return for ealy bail out
        */
-      if (['/', '/login', '/register'].includes(to.path))
+      if (['/', '/login', '/register', '/one-time-pin'].includes(to.path))
         return next('/dashboard')
 
       /**
@@ -67,11 +68,11 @@ export default async (
 
     next()
   } else {
-    if (!router.hasRoute('Home')) {
+    if (!router.hasRoute('Login')) {
       addRoutes(staticRoutes)
       removeRoutes(dynamicRoutes, true)
 
-      if (router.hasRoute('Home')) return next(to.redirectedFrom?.fullPath)
+      if (router.hasRoute('Login')) return next(to.redirectedFrom?.fullPath)
     }
 
     next()

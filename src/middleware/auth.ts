@@ -1,6 +1,8 @@
-import { getSession } from '@/utils/session'
+import { useBaseStore } from '@/base/store'
 
 export const isAuthenticated = () => {
-  if (getSession('_TOKEN_')) return true
+  const baseStore = useBaseStore()
+
+  if (baseStore._token && baseStore._isAuthenticated) return true
   else return false
 }

@@ -10,6 +10,9 @@ declare module '@vue/runtime-core' {
     AppFooter: typeof import('./src/components/layout/AppFooter/index.vue')['default']
     AppMain: typeof import('./src/components/layout/AppMain/index.vue')['default']
     AppNavigation: typeof import('./src/components/layout/AppNavigation/index.vue')['default']
+    Dynamic: typeof import('./src/components/layout/Dynamic.vue')['default']
+    DynamicLayout: typeof import('./src/components/layout/DynamicLayout.vue')['default']
+    ElAside: typeof import('element-plus/es')['ElAside']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCol: typeof import('element-plus/es')['ElCol']
     ElDivider: typeof import('element-plus/es')['ElDivider']
@@ -21,6 +24,8 @@ declare module '@vue/runtime-core' {
     Layout: typeof import('./src/components/layout/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Static: typeof import('./src/components/layout/Static.vue')['default']
+    StaticLayout: typeof import('./src/components/layout/StaticLayout.vue')['default']
     TextInput: typeof import('./src/components/common/TextInput/index.vue')['default']
   }
   export interface ComponentCustomProperties {
