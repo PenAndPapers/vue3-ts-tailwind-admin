@@ -9,7 +9,7 @@
       class="min-h-screen flex items-center px-10 border-l border-l-gray-200"
     >
       <div class="w-full">
-        <h1>Logo</h1>
+        <h1 class="text-center">Logo</h1>
         <router-view />
       </div>
     </el-aside>

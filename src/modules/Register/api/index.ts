@@ -1,10 +1,9 @@
-import type { LoginForm } from '@/modules/Login/models'
+import request from '@/utils/request'
+import type { RegisterForm, RegisterResponse } from '@/modules/Register/models'
 
-export const login = async (payload: LoginForm) => {
-  if (payload) {
-    const response = await new Promise((resolve) => resolve(true))
-    return response
-  }
-
-  throw new Error('Payload is missing')
-}
+export const register = (data: RegisterForm): Promise<RegisterResponse> =>
+  request({
+    method: 'POST',
+    url: '/register',
+    data,
+  })

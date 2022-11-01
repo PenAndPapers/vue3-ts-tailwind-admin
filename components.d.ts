@@ -8,6 +8,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AppFooter: typeof import('./src/components/layout/AppFooter/index.vue')['default']
+    AppHeader: typeof import('./src/components/layout/AppHeader/index.vue')['default']
     AppMain: typeof import('./src/components/layout/AppMain/index.vue')['default']
     AppNavigation: typeof import('./src/components/layout/AppNavigation/index.vue')['default']
     Dynamic: typeof import('./src/components/layout/Dynamic.vue')['default']
@@ -18,6 +19,7 @@ declare module '@vue/runtime-core' {
     ElDivider: typeof import('element-plus/es')['ElDivider']
     ElForm: typeof import('element-plus/es')['ElForm']
     ElFormItem: typeof import('element-plus/es')['ElFormItem']
+    ElHeader: typeof import('element-plus/es')['ElHeader']
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElInput: typeof import('element-plus/es')['ElInput']
     ElRow: typeof import('element-plus/es')['ElRow']

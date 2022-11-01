@@ -1,6 +1,6 @@
 import { describe, it, beforeEach } from 'vitest'
 import { setActivePinia, createPinia } from 'pinia'
-import { useLoginStore } from './index'
+import { useLoginStore } from '@/modules/Login/store'
 
 describe('Login Store', () => {
   beforeEach(() => {

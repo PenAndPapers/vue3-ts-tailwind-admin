@@ -1,7 +1,9 @@
 <template>
-  <header>
+  <el-aside class="min-h-screen p-4 border-r border-r-gray-200">
+    <h1>Logo</h1>
     <nav>
       <span
+        class="block text-left"
         v-for="(route, index) in routes"
         :key="index"
         :class="index < routes.length - 1 ? 'mr-4' : ''"
@@ -10,11 +12,15 @@
           {{ route.name }}
         </router-link>
       </span>
-      <span class="ml-4" @click="handleLogout" v-if="isAuthenticated">
+      <span
+        class="block text-left cursor-pointer"
+        @click="handleLogout"
+        v-if="isAuthenticated"
+      >
         <a>Log out</a>
       </span>
     </nav>
-  </header>
+  </el-aside>
 </template>
 
 <script setup lang="ts">
