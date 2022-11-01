@@ -1,11 +1,11 @@
 <template>
-  <div class="login-page flex justify-end">
-    <LoginAside />
+  <div class="login-page">
+    <LoginForm />
   </div>
 </template>
 
 <script setup lang="ts">
-import LoginAside from './components/LoginAside/index.vue'
+import LoginForm from './components/LoginForm/index.vue'
 </script>
 
 <style scoped lang="scss"></style>

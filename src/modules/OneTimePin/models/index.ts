@@ -1,5 +1,5 @@
 export interface OneTimePinForm {
-  pin: string
+  otp: string
 }
 
 export interface OneTimePinResponse {

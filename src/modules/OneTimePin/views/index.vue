@@ -1,9 +1,11 @@
 <template>
-  <div class="">
-    <h2 class="text-emerald-800">One Time Pin Page</h2>
+  <div class="one-time-pin-page">
+    <OneTimePin />
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import OneTimePin from './components/OneTimePinForm/index.vue'
+</script>
 
 <style scoped lang="scss"></style>

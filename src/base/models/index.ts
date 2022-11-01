@@ -18,3 +18,8 @@ export class BaseResponseModel {
   data?: unknown
   error?: unknown
 }
+
+export class Token {
+  accessToken: string | null = null
+  refreshToken: string | null = null
+}

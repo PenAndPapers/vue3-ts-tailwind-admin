@@ -1,5 +1,5 @@
 <template>
-  <header v-if="auth">
+  <header>
     <nav>
       <span
         v-for="(route, index) in routes"
@@ -10,7 +10,7 @@
           {{ route.name }}
         </router-link>
       </span>
-      <span class="ml-4" @click="handleLogout" v-if="isLogOut">
+      <span class="ml-4" @click="handleLogout" v-if="isAuthenticated">
         <a>Log out</a>
       </span>
     </nav>
@@ -18,19 +18,23 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
-import { isAuthenticated } from '@/middleware/auth'
-import { clearSession, getSession } from '@/utils/session'
+import { useBaseStore } from '@/base/store'
+
+const baseStore = useBaseStore()
+const isAuthenticated = computed(() => baseStore._isAuthenticated)
+
 const router = useRouter()
 const routes = ref()
-const isLogOut = ref(false)
-const auth = isAuthenticated()
 
 const handleLogout = async () => {
-  await clearSession()
-  if (!getSession('_TOKEN_')) router.replace({ path: '/' })
+  await baseStore.setIsAuthenticated(false)
+  await baseStore.setToken(null)
+  await router.replace({ path: '/' })
+  window.sessionStorage.clear()
 }
+
 watch(
   router.currentRoute,
   () => {
@@ -40,7 +44,6 @@ watch(
         return !item.meta.hideInNav ? item : null
       })
       .filter(Boolean)
-    isLogOut.value = isAuthenticated()
   },
   { deep: true, immediate: true }
 )
