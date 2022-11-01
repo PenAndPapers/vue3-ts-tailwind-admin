@@ -20,20 +20,15 @@
         class="w-full"
         @click="handleLogin"
         :loading="isProcessing"
-        >Login</el-button
+        >Register</el-button
       >
     </el-form-item>
   </el-form>
-  <p class="text-center">
-    <router-link class="text-blue-600" :to="{ name: 'ForgotPassword' }"
-      >Forgot password?</router-link
-    >
-  </p>
   <el-divider class="my-3 border-t border-t-gray-200" />
   <p class="text-center">
-    Dont have an account?&nbsp;
-    <router-link class="text-blue-600" :to="{ name: 'Register' }"
-      >Register</router-link
+    Already have an account?&nbsp;
+    <router-link class="text-blue-600" :to="{ name: 'Login' }"
+      >Login</router-link
     >
   </p>
 </template>
@@ -41,13 +36,13 @@
 <script setup lang="ts">
 import { computed, reactive, ref } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
-import { useLoginStore } from '@/modules/Login/store'
-import { LoginFormRules } from '@/modules/Login/views/components/LoginForm/LoginFormRules'
+import { useRegisterStore } from '@/modules/Register/store'
+import { RegisterFormRules } from '@/modules/Register/views/components/RegisterForm/RegisterFormRules'
 
-const loginStore = useLoginStore()
-const isProcessing = computed(() => loginStore._isProcessing)
+const registerStore = useRegisterStore()
+const isProcessing = computed(() => registerStore._isProcessing)
 
-const rules = reactive(LoginFormRules as FormRules)
+const rules = reactive(RegisterFormRules as FormRules)
 const formRef = ref({} as FormInstance)
 const form = reactive({
   email: 'eve.holt@reqres.in',
@@ -57,7 +52,7 @@ const form = reactive({
 const handleLogin = async () => {
   const isFormValid = await formRef.value.validate((valid) => valid)
   if (isFormValid) {
-    loginStore.login(form)
+    registerStore.register(form)
     handleReset()
   }
 }

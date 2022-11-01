@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import OneTimePin from './components/OneTimePinForm/index.vue'
+import OneTimePin from '@/modules/OneTimePin/views/components/OneTimePinForm/index.vue'
 </script>
 
 <style scoped lang="scss"></style>

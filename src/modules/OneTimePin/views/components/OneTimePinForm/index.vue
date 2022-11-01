@@ -33,7 +33,7 @@
 import { computed, reactive, ref } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
 import { useOneTimePinStore } from '@/modules/OneTimePin/store'
-import { OneTimePinFormRules } from './OneTimePinFormRules'
+import { OneTimePinFormRules } from '@/modules/OneTimePin/views/components/OneTimePinForm/OneTimePinFormRules'
 
 const oneTimePinStore = useOneTimePinStore()
 const isProcessing = computed(() => oneTimePinStore._isProcessing)

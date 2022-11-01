@@ -1,7 +1,10 @@
 import { defineStore } from 'pinia'
 import router from '@/base/router'
 import { useBaseStore } from '@/base/store'
-import type { OneTimePinForm, OneTimePinResponse } from '../models'
+import type {
+  OneTimePinForm,
+  OneTimePinResponse,
+} from '@/modules/OneTimePin/models'
 interface StoreInterface {
   isFetching: boolean
   isProcessing: boolean

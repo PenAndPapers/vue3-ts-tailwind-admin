@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import router from '@/base/router'
-import { login } from '../api'
-import type { LoginForm } from '../models'
+import { login } from '@/modules/Login/api'
+import type { LoginForm } from '@/modules/Login/models'
 interface StoreInterface {
   isFetching: boolean
   isProcessing: boolean
