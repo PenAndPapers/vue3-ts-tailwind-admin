@@ -1,10 +1,14 @@
-import type { LoginForm } from '@/modules/Login/models'
+import request from '@/utils/request'
+import type {
+  ForgotPasswordForm,
+  ForgotPasswordResponse,
+} from '@/modules/ForgotPassword/models'
 
-export const login = async (payload: LoginForm) => {
-  if (payload) {
-    const response = await new Promise((resolve) => resolve(true))
-    return response
-  }
-
-  throw new Error('Payload is missing')
-}
+export const sendPasswordUpdateLink = (
+  data: ForgotPasswordForm
+): Promise<ForgotPasswordResponse> =>
+  request({
+    method: 'POST',
+    url: '/login',
+    data,
+  })

@@ -1,8 +1,11 @@
 import { defineStore } from 'pinia'
+import { sendPasswordUpdateLink } from '@/modules/ForgotPassword/api'
+import type { ForgotPasswordForm } from '@/modules/ForgotPassword/models'
 
 interface StoreInterface {
   isFetching: boolean
   isProcessing: boolean
+  isPasswordLinkSent: boolean
 }
 
 export const useForgotPasswordStore = defineStore({
@@ -10,6 +13,7 @@ export const useForgotPasswordStore = defineStore({
   state: (): StoreInterface => ({
     isFetching: false,
     isProcessing: false,
+    isPasswordLinkSent: false,
   }),
   getters: {
     _isFetching: (state) => state.isFetching,
@@ -21,6 +25,13 @@ export const useForgotPasswordStore = defineStore({
     },
     setIsProcessing(payload: boolean) {
       this.isProcessing = payload
+    },
+    async sendPasswordUpdateLink(payload: ForgotPasswordForm) {
+      this.isProcessing = true
+      const response = await sendPasswordUpdateLink(payload)
+      this.isProcessing = false
+
+      this.isPasswordLinkSent = response ? true : false
     },
   },
 })
