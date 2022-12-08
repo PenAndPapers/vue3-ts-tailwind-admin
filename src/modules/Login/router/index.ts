@@ -4,6 +4,7 @@ export default [
     alias: '/',
     name: 'Login',
     meta: {
+      title: 'Login',
       class: 'login',
       requiresAuth: false,
       hideInNav: false,

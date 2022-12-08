@@ -3,6 +3,7 @@ export default [
     path: '/users',
     name: 'Users',
     meta: {
+      title: 'Users',
       class: 'users',
       requiresAuth: true,
       hideInNav: false,
@@ -15,6 +16,7 @@ export default [
     path: '/user/:id',
     name: 'Profile',
     meta: {
+      title: 'Profile',
       class: 'user',
       requiresAuth: true,
       hideInNav: true,

@@ -1,7 +1,7 @@
 <template>
   <main class="w-full">
     <AppHeader />
-    <component class="block p-4" :is="'content'">
+    <component class="block p-7" :is="'content'">
       <router-view />
     </component>
   </main>

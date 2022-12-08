@@ -1,0 +1,14 @@
+.el-tabs__nav-wrap{
+  &:after {
+    height: 1px !important;
+  }
+}
+
+.el-tabs__header {
+  margin-bottom: 3rem !important;
+}
+
+.el-tabs__item {
+  font-size: 1.15rem !important;
+  font-weight: 400 !important;
+}
