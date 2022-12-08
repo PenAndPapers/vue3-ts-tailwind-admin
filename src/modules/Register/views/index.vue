@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useRegisterStore } from '@/modules/Register/store'
 import RegisterForm from '@/modules/Register/views/components/RegisterForm/index.vue'
 import SuccessMessage from '@/modules/Register/views/components/RegisterMessage/SuccessMessage.vue'
@@ -15,6 +15,10 @@ import ErrorMessage from '@/modules/Register/views/components/RegisterMessage/Er
 
 const registerStore = useRegisterStore()
 const isRegistered = computed(() => registerStore._isRegistered)
+
+onMounted(() => {
+  registerStore.setIsRegistered(null)
+})
 </script>
 
 <style scoped lang="scss"></style>

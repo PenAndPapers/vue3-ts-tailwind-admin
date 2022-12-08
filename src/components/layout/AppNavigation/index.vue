@@ -1,5 +1,5 @@
 <template>
-  <el-aside class="min-h-screen p-4 border-r border-r-gray-200">
+  <el-aside class="app-navigation min-h-screen p-4 border-r border-r-gray-200">
     <h1>Logo</h1>
     <nav>
       <span

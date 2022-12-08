@@ -26,12 +26,15 @@ export const useRegisterStore = defineStore({
     setIsProcessing(payload: boolean) {
       this.isProcessing = payload
     },
+    setIsRegistered(payload: boolean | null) {
+      this.isRegistered = payload
+    },
     async register(payload: RegisterForm) {
       this.isProcessing = true
       const response = await register(payload)
       this.isProcessing = false
 
-      this.isRegistered = response ? true : false
+      this.setIsRegistered(response ? true : false)
     },
   },
 })

@@ -4,3 +4,13 @@
   box-sizing: border-box;
   text-align: left;
 }
+
+.app-navigation {
+  h1 {
+    margin: .5rem auto;
+  }
+  a {
+    display: block;
+    padding: .25rem 0;
+  }
+}

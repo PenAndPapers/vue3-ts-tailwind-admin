@@ -32,7 +32,7 @@
       <el-button
         type="primary"
         class="w-full"
-        @click="handleLogin"
+        @click="handleRegister"
         :loading="isProcessing"
         >Register</el-button
       >
@@ -63,7 +63,7 @@ const form = reactive({
   password: 'cityslicka',
 })
 
-const handleLogin = async () => {
+const handleRegister = async () => {
   const isFormValid = await formRef.value.validate((valid) => valid)
   if (isFormValid) {
     registerStore.register(form)
