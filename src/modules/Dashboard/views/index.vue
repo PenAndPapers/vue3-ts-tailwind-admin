@@ -1,6 +1,13 @@
 <template>
   <div class="" data-testid="dashboard-page">
-    <h2 class="text-violet-800">Dashboard page</h2>
+    <el-row gutter="24">
+      <el-col :span="6"><el-card shadow="hover">Sales</el-card></el-col>
+      <el-col :span="6"><el-card shadow="hover">Expenses</el-card></el-col>
+      <el-col :span="6"
+        ><el-card shadow="hover">New registered users</el-card></el-col
+      >
+      <el-col :span="6"><el-card shadow="hover"> Hover </el-card></el-col>
+    </el-row>
   </div>
 </template>
 
