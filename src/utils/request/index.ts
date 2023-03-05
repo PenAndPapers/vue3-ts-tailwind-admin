@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { setToken } from './setToken'
 const BASE_URL = import.meta.env.VITE_API_BASE_URL
-const TIMEOUT = 35000
+const TIMEOUT = 8000
 
 let request = axios.create({
   baseURL: BASE_URL,
